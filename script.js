@@ -1,5 +1,5 @@
 // Adresse IP de l'ESP32 (à adapter)
-const esp32Ip = "http://192.168.1.100"; // Remplace par l'adresse IP de ton ESP32
+const esp32Ip = "10.1.224.146"; 
 
 // Fonction pour envoyer des requêtes HTTP
 function envoyerCommande(action) {
