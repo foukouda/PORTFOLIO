@@ -2,16 +2,73 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <title>Page Responsive avec Barre de Navigation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contrôle ESP32</title>
+    <!-- Lien vers la police 'Protest Strike' -->
     <link rel="stylesheet" href="style.css">
+    <!-- Lien vers Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <h1>Contrôle de l'ESP32 via le site web</h1>
-    <div class="container">
-        <button id="btnAllumer" class="btn">Allumer LED</button>
-        <button id="btnEteindre" class="btn">Éteindre LED</button>
+    <!-- Barre de navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo">
+            <!-- Votre logo agrandi -->
+            <img src="images/logo.png" alt="Logo" />
+        </div>
+        <ul>
+            <li><a href="#"><img src="images/icon-accueil.png" alt="Accueil" /></a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="main-content" id="main-content">
+        <!-- En-tête avec le titre et les boutons -->
+        <header>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            <div class="header-content">
+                <h1 class="main-title">TRUST STAND</h1>
+                <div class="buttons-container">
+                    <button class="start-button">
+                        Start new test
+                        <img src="images/arrow-icon.png" alt="Flèche" class="arrow-icon">
+                    </button>
+                    <button class="download-button">
+                        <img src="images/download-icon.png" alt="Télécharger" class="download-icon">
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Trait blanc sous l'en-tête -->
+        <hr class="divider">
+
+        <!-- Nouveaux conteneurs pour les graphes -->
+        <div class="graphs-container">
+            <!-- Premier graphe -->
+            <div class="graph" id="graph1-container">
+                <!-- Bouton avec icône dans le conteneur du graphe -->
+                <button class="graph-button" id="graph1-button">
+                    <img src="images/button-icon.png" alt="Bouton" class="graph-button-icon">
+                </button>
+                <!-- Canvas pour le graphe -->
+                <canvas id="graph1"></canvas>
+            </div>
+            <!-- Deuxième graphe -->
+            <div class="graph" id="graph2-container">
+                <!-- Bouton avec icône dans le conteneur du graphe -->
+                <button class="graph-button" id="graph2-button">
+                    <img src="images/button-icon.png" alt="Bouton" class="graph-button-icon">
+                </button>
+                <!-- Canvas pour le graphe -->
+                <canvas id="graph2"></canvas>
+            </div>
+        </div>
     </div>
+
+    <!-- Overlay pour le mode mobile -->
+    <div class="overlay" id="overlay"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
