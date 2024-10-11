@@ -1,6 +1,14 @@
+/* Fichier JavaScript : script-animations.js */
+
 const menuToggle = document.getElementById('menu-toggle');
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('overlay');
+
+if (overlay) {
+    overlay.addEventListener('click', function() {
+        toggleSidebar();
+    });
+}
 
 function toggleSidebar() {
     sidebar.classList.toggle('active');
@@ -15,9 +23,27 @@ overlay.addEventListener('click', function() {
     toggleSidebar();
 });
 
+/* Événements des boutons des graphes */
+
+// Bouton du premier graphe
+document.getElementById('graph1-button').addEventListener('click', function() {
+    // Générer de nouvelles données pour la poussée
+    const nouvellesDonnees = activationPourcentage.map(p => (Math.random() * p / 50).toFixed(2));
+    chart1.data.datasets[0].data = nouvellesDonnees;
+    chart1.update();
+});
+
+// Bouton du deuxième graphe
+document.getElementById('graph2-button').addEventListener('click', function() {
+    // Générer de nouvelles données pour l'intensité sonore
+    const nouvellesDonnees = frequences.map(f => (Math.random() * 100).toFixed(2));
+    chart2.data.datasets[0].data = nouvellesDonnees;
+    chart2.update();
+});
+
 /* Création des graphes spécifiques */
 
-/* Premier graphe : Poussée en g par rapport au % d'activation du moteur */
+// Premier graphe : Poussée en g par rapport au % d'activation du moteur
 const ctx1 = document.getElementById('graph1').getContext('2d');
 
 // Données pour le premier graphe
@@ -64,7 +90,7 @@ const chart1 = new Chart(ctx1, {
     }
 });
 
-/* Deuxième graphe : Intensité du son par rapport à la fréquence */
+// Deuxième graphe : Intensité du son par rapport à la fréquence
 const ctx2 = document.getElementById('graph2').getContext('2d');
 
 // Données pour le deuxième graphe
@@ -110,22 +136,4 @@ const chart2 = new Chart(ctx2, {
             }
         }
     }
-});
-
-/* Événements des boutons des graphes */
-
-// Bouton du premier graphe
-document.getElementById('graph1-button').addEventListener('click', function() {
-    // Générer de nouvelles données pour la poussée
-    const nouvellesDonnees = activationPourcentage.map(p => (Math.random() * p / 50).toFixed(2));
-    chart1.data.datasets[0].data = nouvellesDonnees;
-    chart1.update();
-});
-
-// Bouton du deuxième graphe
-document.getElementById('graph2-button').addEventListener('click', function() {
-    // Générer de nouvelles données pour l'intensité sonore
-    const nouvellesDonnees = frequences.map(f => (Math.random() * 100).toFixed(2));
-    chart2.data.datasets[0].data = nouvellesDonnees;
-    chart2.update();
 });
