@@ -2,6 +2,10 @@
 
 This repository contains the HTML, JavaScript, and CSS code for a responsive web interface for managing the "Trust Stand" test platform. The project includes dynamic charts, a sidebar menu, and WebSocket integration for ESP32 communication.
 
+## FIGMA lINK
+
+https://www.figma.com/proto/kf5Ook12Ous0l0PIEMVUty/Untitled?node-id=0-1&t=xqmq3c0P0xDhc0Y3-1
+
 ## Project Overview
 
 This project is intended to provide a user-friendly web interface for monitoring and controlling tests performed on the Trust Stand. It includes the following main features:
